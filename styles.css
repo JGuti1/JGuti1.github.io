@@ -1,7 +1,7 @@
-body{
+body{ /*Coloco el color del body */
     background: #111827;
 }
-.container {
+.container { /* Este es el contenedor principal en el que va a ir toda la información */
     max-width: 900px;
     margin: 30px auto;
     background: #292F3D;
@@ -13,12 +13,12 @@ body{
     position: relative;
 }
 
-@property --angle{
+@property --angle{ /* Defino la variable --angle para poder hacer la animación */
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
-.container::after, .container::before{
+.container::after, .container::before{ /* Aqui comienzo a hacer la animación de lo azul que recorre el div principal */
     content: '';
     position: absolute;
     height: 100%;
@@ -61,23 +61,23 @@ body{
         background-position: 0 50%;
     }
 }
-.header{
+.header{ /* Aqui coloco la alineacion del texto del header y el margen que tendra */
     text-align: center;
     margin-bottom: 30px;
 }
 
-.photo{
+.photo{ /* Alineo el contenedor que tiene la foto para que todo se ubique en la mitad */
     text-align: center;
 }
 
-.photo img{
+.photo img{ /* Coloco el tamaño de la imagen el radio y la margen */
     width: 20%;
     border-radius: 50px;
     margin-top: auto;
     align-items: center;
 }
 
-.header h1{
+.header h1{ /*Le doy estilos a el titulo del sitio */
     margin: auto;
     font-size: 40px;
     font-family: "Righteous", sans-serif;
@@ -88,7 +88,7 @@ body{
       
 }
 
-.header h2{
+.header h2{  /*Le doy estilos a el subtitulo del sitio */
     margin: auto;
     font-size: 36px;
     font-family: "Righteous", sans-serif;
@@ -97,7 +97,7 @@ body{
     
 }
 
-.content {
+.content { /*Aqui le doy un display flex para que lo que este dentro de el contenedor se coloque lado a lado, lo centro y le doy estilo a las letras */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,29 +113,29 @@ body{
     
 }
 
-.left {
+.left { /*Aqui edito todo lo que tendra el contenedor que esta a la izquierda */
     flex-basis: 300px;
     text-align: center;
 
 }
 
-.mid {
+.mid { /*Aqui edito todo lo que estara en la mitad */
     flex-basis: 300px;
     text-align: center;
 
 }
 
-.right {
+.right { /*Aqui edito todo lo que estara a la izquierda */
     flex-basis: 300px;
     text-align: center;
 }
 
-.left, .mid, .right {
+.left, .mid, .right { /*A todos les doy una altura del 100% del contenedor*/
     height: 100%; 
    
   }
 
-.slider {
+.slider { /*Aqui cuadro el tamaño, margen y altura del slider de las redes sociales */
     width: 450px;
     height: auto;
     margin: auto;
@@ -143,22 +143,22 @@ body{
 
 }
 
-.slider .slider-track {
+.slider .slider-track { /* Aqui configuro para que haga la animacion de que se mueven hacia la izquierda, el webkit es para que corra en todos los navegadores */
     display: flex;
     animation: scroll 40s linear infinite;
     -webkit-animation: scroll 40s linear infinite ;
     width: calc(200px * 8);
 }
 
-.slider .slide {
+.slider .slide { /*Le doy un ancho de 100px al contenedor */
     width: 100px;
 }
 
-.slider .slide img {
+.slider .slide img { /*configuro para que la imagen ocupe el 100% del ancho del contenedor */
     width: 100%;
 }
 
-@keyframes scroll {
+@keyframes scroll { /*Aqui se configura para que haga la animacion haciendo calculos del tamaño de imagen por cuantas img esten */
     0% {
         -webkit-transform: translateX(0) ;
         transform: translateX(0);
