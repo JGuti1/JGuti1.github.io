@@ -1,10 +1,10 @@
 body{
-    background: #D9E3F0;
+    background: #111827;
 }
 .container {
     max-width: 900px;
     margin: 30px auto;
-    background: linear-gradient(45deg,#d2001a,#7462ff, green);
+    background: #292F3D;
     background-size: 300% 300%;
     animation: color 12s ease-in-out infinite;
     padding: 20px;
@@ -23,7 +23,7 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle),red,blue, green, pink, red);
+    background-image: conic-gradient(from var(--angle), transparent 70%, #49A6E9);
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -80,26 +80,21 @@ body{
 .header h1{
     margin: auto;
     font-size: 40px;
-    font-family: "Honk", system-ui;
-    font-optical-sizing: auto;
+    font-family: "Righteous", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-      "MORF" 15,
-      "SHLN" 50;
+    color: #49A6E9;
+    
       
 }
 
 .header h2{
     margin: auto;
     font-size: 36px;
-    font-family: "Honk", system-ui;
-    font-optical-sizing: auto;
+    font-family: "Righteous", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-      "MORF" 15,
-      "SHLN" 50;
+    
 }
 
 .content {
@@ -114,7 +109,7 @@ body{
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    color: #bbb6b6;
+    color: #ffffff;
     
 }
 
