@@ -132,7 +132,7 @@ body{
 
 .left, .mid, .right {
     height: 100%; 
-    overflow-y: auto; 
+   
   }
 
 .slider {
