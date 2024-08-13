@@ -140,3 +140,37 @@ body{
     overflow-y: auto; 
   }
 
+.slider {
+    width: 450px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.slider .slider-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite ;
+    width: calc(200px * 8);
+}
+
+.slider .slide {
+    width: 100px;
+}
+
+.slider .slide img {
+    width: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0) ;
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-200px * 4)) ;
+        transform: translatex(calc(-200px * 4));
+    }
+
+    }
