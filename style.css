@@ -1,64 +1,142 @@
+body{
+    background: #D9E3F0;
+}
 .container {
     max-width: 900px;
     margin: 30px auto;
-    background: purple;
+    background: linear-gradient(45deg,#d2001a,#7462ff, green);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
     padding: 20px;
     box-shadow: 0 0 10px rgba(109, 42, 42, 0.1);
+    border-radius: 10px;
+    position: relative;
 }
 
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.container::after, .container::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),red,blue, green, pink, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.container::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+    --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+
+    }
+}
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0 50%;
+    }
+}
 .header{
     text-align: center;
-    margin-bottom: 30 px;
+    margin-bottom: 30px;
+}
+
+.photo{
+    text-align: center;
+}
+
+.photo img{
+    max-width: 20%;
+    border-radius: 50px;
+    margin-top: auto;
+    align-items: center;
 }
 
 .header h1{
-    margin: 0;
+    margin: auto;
+    font-size: 40px;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 15,
+      "SHLN" 50;
+      
+}
+
+.header h2{
+    margin: auto;
     font-size: 36px;
     font-family: "Honk", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
-    "MORF" 15,
-    "SHLN" 50;
-    font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: goldenrod;
+      "MORF" 15,
+      "SHLN" 50;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-direction: row;
+    height: 400px;
+    margin-bottom: 1px;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #bbb6b6;
     
 }
 
-.header h2{
-    margin: 10px 0 0;
-    font-weight: normal;
-    font-family: "Honk", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-    "MORF" 15,
-    "SHLN" 50;
+.left {
+    flex-basis: 300px;
+    text-align: center;
 
 }
 
-.content
-{
-    display: flex;
-    justify-content: space-between;
+.mid {
+    flex-basis: 300px;
+    text-align: center;
+
 }
 
-.photo img
-{
-    max-width: 50%;
-    border-radius: 50px;
-    margin-top: 10px;
-    align-self: center;
+.right {
+    flex-basis: 300px;
+    text-align: center;
 }
 
-section{
-    margin-bottom: 20px;
-}
+.left, .mid, .right {
+    height: 100%; 
+    overflow-y: auto; 
+  }
 
-.left-column{
-    max-width: 300px;
-}
