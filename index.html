@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Honk&family=Righteous&display=swap" rel="stylesheet">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <div class="container"> <!--Este es el contenedor padre-->
@@ -22,11 +23,15 @@
 
         <div class="content"> <!-- Aqui tengo todo lo relacionado al contenido-->
             <div class="left"> <!-- Este es el contenedor que tendra la informacion de la izquierda-->
-                <h3>Información <span style="color:#49a6e9">Personal</span></h3>
-                <p>Edad: 21</p>
-                <p>Ciudad: Cali</p>
-                <p>Idiomas: Español(Nativo) <br>Ingles(Basico)</p>
-                <p>Disponibilidad: Abierto a nuevas oportunidades</p>
+                <h3>Habilidades <span style="color:#49a6e9">Técnicas</span></h3>
+                <ul id="taskList">
+                    <li>Java</li>
+                    <li>MySQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+
+                </ul>
+               
 
             </div>
             <div class="mid"> <!--En este tendre  la informacion del medio-->
@@ -41,9 +46,26 @@
             </div>
             <div class="right"> <!-- En este tendre a informacion de la derecha-->
                 <h3>Formación <span style="color:#49A6E9">Academica</span></h3>
+                
                 <p><strong>Universidad Santiago de Cali</strong> <br>Cuarto Semestre</p>
-                <p><strong>Inst Educativa Republica de Israel</strong> <br> Educación Media
+                <p><strong>Inst Educativa Republica de Israel</strong> <br> Educación Media</p>
+                <p id="estudio">
+
+                </p>
+                
             </div>
+        </div>
+
+        <div class="botones">
+            <button class="btn" id="addTask"> <span style="color:#49A6E9">Agregar</span> Lenguaje </button>
+            <button class="btn" id="deleteTask"> <span style="color:#49A6E9">Borrar</span> Lenguaje</button>
+            <button class="btn" id="editTask"> <span style="color:#49A6E9" >Editar </span>Lenguaje</button>
+        </div>
+
+        <div class="botones">
+            <button class="btn" id="addEduc"> Agregar <span style="color:#49A6E9"> Educación</span> </button>
+            <button class="btn" id="deleteEduc"> Borrar <span style="color:#49A6E9"> Educación</span></button>
+            <button class="btn" id="editEduc"> Editar <span style="color:#49A6E9"> Educación</span></button>
         </div>
 
         <div class="slider"> <!-- EN ese contenedor tendre todo lo relacionado al slider de redes sociales-->
