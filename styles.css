@@ -186,7 +186,7 @@ body{ /*Coloco el color del body */
     }
 
     .left{
-        margin-bottom: -40px;
+        margin-bottom: -120px;
 
     }
 
@@ -196,7 +196,7 @@ body{ /*Coloco el color del body */
 
     .slider{
         width: 100%;
-        margin-top: -120px;
+        margin-top: 10px;
     }
 
     .slider .slide {
@@ -232,9 +232,19 @@ body{ /*Coloco el color del body */
         font-size: 26px;
     }
 
+    .botones {    
+     flex-direction: column ; 
+     height: 100%;
+     width: 100%;
+     margin-top: -100px;
+     text-align: center; 
+
+   
+    }
+
     
 }
-
+/*Aqui hago el estilo de los botones */
 .btn {
     margin: 1px;
     padding: 15px 40px;
