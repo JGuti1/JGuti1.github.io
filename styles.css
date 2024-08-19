@@ -236,10 +236,13 @@ body{ /*Coloco el color del body */
      flex-direction: column ; 
      height: 100%;
      width: 100%;
-     margin-top: -100px;
      text-align: center; 
 
    
+    }
+
+    .right{
+        margin-bottom: -130px;
     }
 
     
