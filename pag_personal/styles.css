@@ -1,0 +1,325 @@
+body{ /*Coloco el color del body */
+    background: #111827;
+}
+.container { /* Este es el contenedor principal en el que va a ir toda la información */
+    max-width: 900px;
+    margin: 30px auto;
+    background: #292F3D;
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(109, 42, 42, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+@property --angle{ /* Defino la variable --angle para poder hacer la animación */
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.container::after, .container::before{ /* Aqui comienzo a hacer la animación de lo azul que recorre el div principal */
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, #49A6E9);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.container::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+    --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+
+    }
+}
+
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0 50%;
+    }
+}
+.header{ /* Aqui coloco la alineacion del texto del header y el margen que tendra */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.photo{ /* Alineo el contenedor que tiene la foto para que todo se ubique en la mitad */
+    text-align: center;
+}
+
+.photo img{ /* Coloco el tamaño de la imagen el radio y la margen */
+    width: 20%;
+    border-radius: 50px;
+    margin-top: auto;
+    align-items: center;
+}
+
+.header h1{ /*Le doy estilos a el titulo del sitio */
+    margin: auto;
+    font-size: 40px;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #49A6E9;
+    
+      
+}
+
+.header h2{  /*Le doy estilos a el subtitulo del sitio */
+    margin: auto;
+    font-size: 36px;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.content { /*Aqui le doy un display flex para que lo que este dentro de el contenedor se coloque lado a lado, lo centro y le doy estilo a las letras */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-direction: row;
+    height: 400px;
+    margin-bottom: 1px;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #ffffff;
+    
+}
+
+.left { /*Aqui edito todo lo que tendra el contenedor que esta a la izquierda */
+    flex-basis: 300px;
+    text-align: center;
+
+}
+
+.mid { /*Aqui edito todo lo que estara en la mitad */
+    flex-basis: 300px;
+    text-align: center;
+
+}
+
+.right { /*Aqui edito todo lo que estara a la izquierda */
+    flex-basis: 300px;
+    text-align: center;
+}
+
+.left, .mid, .right { /*A todos les doy una altura del 100% del contenedor*/
+    height: 100%; 
+   
+  }
+
+.slider { /*Aqui cuadro el tamaño, margen y altura del slider de las redes sociales */
+    width: 450px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+
+}
+
+.slider .slider-track { /* Aqui configuro para que haga la animacion de que se mueven hacia la izquierda, el webkit es para que corra en todos los navegadores */
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite ;
+    width: calc(200px * 8);
+}
+
+.slider .slide { /*Le doy un ancho de 100px al contenedor */
+    width: 100px;
+}
+
+.slider .slide img { /*configuro para que la imagen ocupe el 100% del ancho del contenedor */
+    width: 100%;
+}
+
+@keyframes scroll { /*Aqui se configura para que haga la animacion haciendo calculos del tamaño de imagen por cuantas img esten */
+    0% {
+        -webkit-transform: translateX(0) ;
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-200px * 4)) ;
+        transform: translatex(calc(-200px * 4));
+    }
+
+    }
+
+    /* Aqui estoy haciendo el responsive para celular */
+@media (max-width:600px){
+    body{
+        margin: 10px;
+    }
+}
+
+@media (max-width:600px){
+    .content {
+     flex-direction: column ; 
+     height: 100%;
+     width: 100%;
+     margin: 5px;  
+    }
+
+    .left{
+        margin-bottom: -120px;
+
+    }
+
+    .mid{
+        margin-bottom: 20px;
+    }
+
+    .slider{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .slider .slide {
+        width: 60px;
+    }
+
+    .slide {
+        width: 100%;
+    }
+
+    .photo {
+        width: 100%;
+    }
+
+    .photo img {
+        width: 150px;
+    }
+
+    .slider .slider-track {
+        animation: scroll 15s linear infinite;
+    -webkit-animation: scroll 15s linear infinite ;
+    }
+
+    .header{
+        margin-bottom: 10px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .botones {    
+     flex-direction: column ; 
+     height: 100%;
+     width: 100%;
+     text-align: center; 
+
+   
+    }
+
+    .right{
+        margin-bottom: -130px;
+    }
+
+    
+}
+/*Aqui hago el estilo de los botones */
+.btn {
+    margin: 1px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+  }
+  .btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .btn::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btn:hover::before {
+    opacity: 1;
+  }
+  
+  .btn:active:after {
+    background: transparent;
+  }
+  
+  .btn:active {
+    color: #000;
+    font-weight: bold;
+  }
+
+.botones {
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.btn {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
